@@ -92,7 +92,7 @@ const Collection = () => {
                 </div>
 
                 <Link className={styles["collection-button"]} href={"/shop"}>
-                    <Button children="Открыть магазин" color="white" />
+                    <Button color="white">Открыть магазин</Button>
                 </Link>
             </div>
         </div>

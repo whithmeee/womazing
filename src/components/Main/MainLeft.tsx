@@ -17,7 +17,7 @@ const MainLeft = () => {
             <div className={styles["main-content-left-btn"]}>
                 <Image src="/arrow.png" alt="arrow" width={68} height={68} />
                 <Link href={"/shop"}>
-                    <Button color="blue" children="Открыть Магазин" />
+                    <Button color="blue">Открыть Магазин</Button>
                 </Link>
             </div>
         </div>

@@ -8,6 +8,7 @@ import Button from "@/components/Ui/Button/Button";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "@/components/Ui/Loader/Loader";
+import Image from "next/image";
 
 interface IProduct {
     id: number;
@@ -53,14 +54,15 @@ const Shop = () => {
                         {CATEGORY.map((category) => (
                             <Button
                                 key={category.id}
-                                children={category.name}
                                 color={`${
                                     categoryActive === category.id
                                         ? "active"
                                         : "white"
                                 }`}
                                 onClick={() => handleClick(category.id)}
-                            ></Button>
+                            >
+                                {category.name}
+                            </Button>
                         ))}
                     </div>
 
@@ -78,12 +80,20 @@ const Shop = () => {
                                 <Link
                                     className={styles["products-link"]}
                                     href={`/shop/${product.id}`}
+                                    key={product.id}
                                 >
-                                    <div
-                                        className={styles["product"]}
-                                        key={product.id}
-                                    >
-                                        <img src={product.image} alt="#" />
+                                    <div className={styles["product"]}>
+                                        <Image
+                                            src={product.image}
+                                            alt="#"
+                                            width={350}
+                                            height={470}
+                                            style={{
+                                                objectFit: "cover",
+                                                width: "100%",
+                                                height: "100%",
+                                            }}
+                                        />
                                         <h5>{product.title}</h5>
                                         <p>{product.price}$</p>
                                     </div>

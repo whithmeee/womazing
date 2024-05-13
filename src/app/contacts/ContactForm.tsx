@@ -23,7 +23,7 @@ const ContactForm = () => {
                 <textarea placeholder="Сообщение"></textarea>
             </div>
 
-            <Button children="Отправить" color="blue" />
+            <Button color="blue">Отправить</Button>
         </form>
     );
 };

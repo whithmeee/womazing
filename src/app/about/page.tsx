@@ -86,7 +86,7 @@ const About = () => {
 
                 <div className={styles["about-link"]}>
                     <Link href={"/shop"}>
-                        <Button children="Перейти в магазин" color="blue" />
+                        <Button color="blue">Перейти в магазин</Button>
                     </Link>
                 </div>
             </div>

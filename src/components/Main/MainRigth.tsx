@@ -5,10 +5,12 @@ import styles from "./Main.module.scss";
 const MainRigth = () => {
     return (
         <div className={styles["main-rigth-content"]}>
-            <img
+            <Image
                 className={styles["main-rigth-bg-img"]}
                 src="/bg-main.png"
                 alt="bg-main"
+                width={100}
+                height={100}
             />
             <div className={styles["rigth-content"]}>
                 <Image
