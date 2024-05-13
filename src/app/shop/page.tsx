@@ -24,7 +24,7 @@ const Shop = () => {
     const { data, isPending, error } = useQuery({
         queryKey: ["items", categoryActive],
         queryFn: async () => {
-            let url = "https://1608ba9daedea661.mokky.dev/items";
+            let url = "https://1608ba9daedea661.mokky.dev/product";
             if (categoryActive !== 0) {
                 url += `?category=${categoryActive}`;
             }
