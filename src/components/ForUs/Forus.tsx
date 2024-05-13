@@ -39,7 +39,10 @@ const Forus = () => {
                 <div className={styles["forus-items"]}>
                     {forusData.map((forus) => {
                         return (
-                            <div className={styles["forus-item"]}>
+                            <div
+                                key={forus.id}
+                                className={styles["forus-item"]}
+                            >
                                 <Image
                                     src={forus.img}
                                     alt={forus.title}
