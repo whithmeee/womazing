@@ -5,16 +5,9 @@ import styles from "./Main.module.scss";
 const MainRigth = () => {
     return (
         <div className={styles["main-rigth-content"]}>
-            <Image
-                className={styles["main-rigth-bg-img"]}
-                src="/bg-main.png"
-                alt="bg-main"
-                width={100}
-                height={100}
-            />
             <div className={styles["rigth-content"]}>
                 <Image
-                    src="/image3.png"
+                    src="/image3.jpg"
                     alt="img-3"
                     width={197}
                     height={197}
@@ -22,7 +15,7 @@ const MainRigth = () => {
                 />
 
                 <Image
-                    src="/image2.png"
+                    src="/image2.jpg"
                     alt="main-img"
                     width={410}
                     height={646}
@@ -30,7 +23,7 @@ const MainRigth = () => {
                 />
 
                 <Image
-                    src="/image1.png"
+                    src="/image1.jpg"
                     alt="left-image-main"
                     width={190}
                     height={318}

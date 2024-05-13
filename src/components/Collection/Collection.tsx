@@ -37,6 +37,21 @@ const ITEM_COLLECTION: IItemCollection[] = [
         arrow: "/arrow-item.png",
         price: "$350",
     },
+    {
+        id: 4,
+        image: "/image1.jpg",
+        title: "Мини-платье на бретелях",
+        arrow: "/arrow-item.png",
+        price: "$330",
+    },
+
+    {
+        id: 5,
+        image: "/image3.jpg",
+        title: "Baby T-Shirt",
+        arrow: "/arrow-item.png",
+        price: "$150",
+    },
 ];
 
 const responsiveSettings = [
@@ -48,10 +63,10 @@ const responsiveSettings = [
         },
     },
     {
-        breakpoint: 500,
+        breakpoint: 600,
         settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
+            slidesToShow: 1,
+            slidesToScroll: 1,
         },
     },
 ];

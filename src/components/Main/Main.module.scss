@@ -56,6 +56,9 @@
 
             .image-main {
                 position: relative;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
             }
 
             .image-rigth {
@@ -63,12 +66,14 @@
                 right: -100px;
                 z-index: 100;
                 top: 142px;
+                object-fit: cover;
             }
 
             .left-image-main {
                 position: absolute;
                 left: -130px;
                 bottom: -76px;
+                object-fit: cover;
             }
         }
     }
