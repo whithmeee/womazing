@@ -1,0 +1,71 @@
+.container {
+    width: 100%;
+    max-width: 1273px;
+    margin: 0 auto;
+}
+
+.collection-content {
+    margin-top: 200px;
+    margin-bottom: 130px;
+
+    .collection-title {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: 0.02em;
+        color: #000000;
+    }
+
+    .collection-items {
+        margin-top: 92px;
+        margin-bottom: 65px;
+
+        .collection-item {
+            cursor: pointer;
+            overflow: hidden;
+
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            img {
+                object-fit: cover;
+                transition: 1s;
+                display: block;
+            }
+
+            // &:hover::after {
+            //     content: "";
+            //     position: absolute;
+            //     top: 35%;
+            //     left: 50%;
+            //     transform: translate(-50%, -50%);
+            //     width: 100%;
+            //     height: 88%;
+            //     background: rgba(
+            //         110,
+            //         156,
+            //         159,
+            //         0.6
+            //     ); // используем RGBA для прозрачности
+            //     z-index: 100;
+
+            //     transition: background 5s ease-in-out; // добавляем transition для свойства background
+            // }
+        }
+    }
+
+    .collection-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-decoration: none;
+    }
+}
+
+.react-slideshow-container .nav {
+    position: relative;
+}

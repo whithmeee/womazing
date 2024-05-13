@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 51px;
+    .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+
+        h1 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #000000;
+        }
+    }
+
+    .header-menu-list {
+        display: flex;
+        gap: 45px;
+
+        .header-menu-link {
+            text-decoration: none;
+            color: #000000;
+            cursor: pointer;
+
+            li {
+                list-style: none;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000000;
+            }
+
+            .active {
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #6e9c9f;
+            }
+        }
+    }
+
+    .header-contacts {
+        display: flex;
+        align-items: center;
+        gap: 67px;
+
+        .header-contacts-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                color: #000000;
+                cursor: pointer;
+            }
+        }
+
+        .header-contacts-btn {
+            outline: none;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+}

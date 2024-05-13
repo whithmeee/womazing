@@ -1,0 +1,115 @@
+.contacts {
+    margin-top: 190px;
+
+    .contacts-content {
+        .contacts-title {
+            h2 {
+                font-weight: 500;
+                font-size: 55px;
+                line-height: 110%;
+                letter-spacing: 0.02em;
+                color: #000000;
+            }
+
+            .contacts-links {
+                display: flex;
+                a {
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 17px;
+                    line-height: 140%;
+                    letter-spacing: 0.02em;
+                    color: #000000;
+                }
+
+                .contacts-links-contact {
+                    color: #919191;
+                }
+            }
+        }
+
+        .contact-maps {
+            width: 100%;
+            height: 476px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            margin-top: 214px;
+        }
+
+        .contacts-info {
+            display: flex;
+            gap: 100px;
+            margin-top: 130px;
+
+            div {
+                p {
+                    /* Телефон */
+
+                    font-weight: 500;
+                    font-size: 17px;
+                    line-height: 140%;
+                    letter-spacing: 0.02em;
+                    color: #000000;
+                }
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .contacts-form {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-bottom: 214px;
+
+            h4 {
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000000;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                width: 443px;
+                gap: 15px;
+
+                label {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 17px;
+
+                    letter-spacing: 0.02em;
+                    color: #868686;
+                }
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid #868686;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                textarea {
+                    border: none;
+                    border-bottom: 1px solid #868686;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
