@@ -15,8 +15,6 @@ const sliders = [
     },
 ];
 
-console.log(sliders);
-
 const Womazing = () => {
     return (
         <div className="container">

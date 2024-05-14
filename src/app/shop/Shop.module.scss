@@ -48,6 +48,13 @@
             gap: 30px;
             margin-bottom: 130px;
 
+            .product-loader {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+            }
+
             .products-link {
                 text-decoration: none;
                 color: #000;

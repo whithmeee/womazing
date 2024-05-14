@@ -9,28 +9,34 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "@/components/Ui/Loader/Loader";
 import Image from "next/image";
+import productServices from "@/services/product.services";
 
-interface IProduct {
+export interface IProduct {
     id: number;
     title: string;
     image: string;
     price: number;
 }
 
+export const CATEGORY_ID = [
+    "Все",
+    "Платья",
+    "Верхняя одежда",
+    "Брюки",
+    "Футболки",
+];
+
 const Shop = () => {
     const pathname = usePathname();
     const [categoryActive, setCategoryActive] = useState(0);
 
     const { data, isPending, error } = useQuery({
-        queryKey: ["items", categoryActive],
-        queryFn: async () => {
-            let url = "https://1608ba9daedea661.mokky.dev/product";
-            if (categoryActive !== 0) {
-                url += `?category=${categoryActive}`;
-            }
-            return await axios.get<IProduct[]>(url).then((res) => res.data);
-        },
+        queryKey: ["items", CATEGORY_ID[categoryActive]],
+        queryFn: () => productServices.getAll(CATEGORY_ID[categoryActive]),
+        select: ({ data }) => data,
     });
+
+    console.log(CATEGORY_ID[categoryActive]);
 
     const handleClick = (id: number) => {
         setCategoryActive(id);
