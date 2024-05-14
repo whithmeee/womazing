@@ -104,6 +104,7 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
                             <ul className={styles["lists-size"]}>
                                 {PRODUCT_SIZE.map((size, index) => (
                                     <li
+                                        key={index}
                                         className={
                                             styles[
                                                 sizeActive === index
@@ -114,7 +115,6 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
                                         onClick={() =>
                                             handleClickSizeActive(index)
                                         }
-                                        key={index}
                                     >
                                         {size}
                                     </li>
@@ -127,7 +127,10 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
 
                             <ul>
                                 {PRODUCT_COLOR.map((color) => (
-                                    <li style={{ background: `${color}` }}>
+                                    <li
+                                        key={color}
+                                        style={{ background: `${color}` }}
+                                    >
                                         {"."}
                                     </li>
                                 ))}

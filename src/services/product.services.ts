@@ -19,6 +19,3 @@ class ProductService {
 }
 
 export default new ProductService();
-
-// https://1608ba9daedea661.mokky.dev/
-// https://1608ba9daedea661.mokky.dev/
