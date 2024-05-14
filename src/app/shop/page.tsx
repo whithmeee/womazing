@@ -17,13 +17,7 @@ export interface IProduct {
     price: number;
 }
 
-export const CATEGORY_ID = [
-    "Все",
-    "Платья",
-    "Верхняя одежда",
-    "Брюки",
-    "Футболки",
-];
+const CATEGORY_ID = ["Все", "Платья", "Верхняя одежда", "Брюки", "Футболки"];
 
 const Shop = () => {
     const pathname = usePathname();
