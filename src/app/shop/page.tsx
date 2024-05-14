@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CATEGORY } from "./ShopCategory";
 import Button from "@/components/Ui/Button/Button";
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "@/components/Ui/Loader/Loader";
 import Image from "next/image";
@@ -35,8 +34,6 @@ const Shop = () => {
         queryFn: () => productServices.getAll(CATEGORY_ID[categoryActive]),
         select: ({ data }) => data,
     });
-
-    console.log(CATEGORY_ID[categoryActive]);
 
     const handleClick = (id: number) => {
         setCategoryActive(id);
