@@ -4,6 +4,7 @@ import "./globals.scss";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Provider from "@/util/Provider";
+import StoreProvider from "./StoreProvider";
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -20,17 +21,19 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <body className={inter.className}>
-                <div className="wrapper">
-                    <div className="header">
-                        <Navbar />
+                <StoreProvider>
+                    <div className="wrapper">
+                        <div className="header">
+                            <Navbar />
+                        </div>
+                        <div className="main">
+                            <Provider>{children}</Provider>
+                        </div>
+                        <div className="footer">
+                            <Footer />
+                        </div>
                     </div>
-                    <div className="main">
-                        <Provider>{children}</Provider>
-                    </div>
-                    <div className="footer">
-                        <Footer />
-                    </div>
-                </div>
+                </StoreProvider>
             </body>
         </html>
     );

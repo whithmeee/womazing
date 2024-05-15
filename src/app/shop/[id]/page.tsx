@@ -6,12 +6,15 @@ import productServices from "@/services/product.services";
 import styles from "./ProductPage.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { PRODUCT_SIZE } from "./ProductSize";
 import Loader from "@/components/Ui/Loader/Loader";
 import { PRODUCT_COLOR } from "./ProductColor";
+import ProductSimilar from "./ProductSimilar";
+import { useAppDispatch } from "@/lib/hooks";
+import { setProduct } from "@/lib/productSlice";
+import Button from "@/components/Ui/Button/Button";
 
 export interface IProductDetail {
     id: number;
@@ -27,6 +30,8 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
 
     const [sizeActive, setSizeActive] = useState<null | number>(null);
 
+    const dispatch = useAppDispatch();
+
     const { data, isPending, error } = useQuery({
         queryKey: ["productPage", params.id],
         queryFn: () => productServices.getById(params.id),
@@ -36,6 +41,10 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
 
     const handleClickSizeActive = (index: number) => {
         setSizeActive(index);
+    };
+
+    const handleClickAddProduct = () => {
+        dispatch(setProduct(data));
     };
 
     return (
@@ -136,8 +145,16 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
                                 ))}
                             </ul>
                         </div>
+
+                        <Button onClick={handleClickAddProduct} color="blue">
+                            Добавить в корзину
+                        </Button>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <ProductSimilar id={data?.id} />
             </div>
         </div>
     );

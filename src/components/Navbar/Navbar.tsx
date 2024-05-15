@@ -49,14 +49,16 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    <button className={styles["header-contacts-btn"]}>
-                        <Image
-                            src="/basket.png"
-                            alt="basket"
-                            width={24}
-                            height={24}
-                        />
-                    </button>
+                    <Link href={"/cart"}>
+                        <button className={styles["header-contacts-btn"]}>
+                            <Image
+                                src="/basket.png"
+                                alt="basket"
+                                width={24}
+                                height={24}
+                            />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </header>

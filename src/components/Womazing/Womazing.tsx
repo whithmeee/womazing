@@ -27,7 +27,7 @@ const Womazing = () => {
                     <div className={styles["womazing-slider-text"]}>
                         <h6>Для каждой</h6>
 
-                        <p>
+                        <p className={styles["text-one"]}>
                             Каждая девушка уникальна. Однако, мы схожи в
                             миллионе мелочей.
                         </p>

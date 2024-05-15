@@ -15,30 +15,30 @@ interface IItemCollection {
     arrow: string;
 }
 
-const ITEM_COLLECTION: IItemCollection[] = [
+export const ITEM_COLLECTION: IItemCollection[] = [
     {
         id: 1,
-        image: "/miss1.jpg",
+        image: "/1.jpg",
         arrow: "/arrow-item.png",
-        title: "Джинсовый полиэстер",
+        title: "Джинсовое мини-платье Lara",
         price: "$270",
     },
     {
         id: 2,
         image: "/miss3.jpg",
         title: "Жаккардовая джинсовая куртка",
-        arrow: "/arrow-item.png",
+        arrow: "/jack1.jpeg",
         price: "$320",
     },
     {
         id: 3,
-        image: "/miss2.jpg",
-        title: "Мини-платье из кружевного шифона",
+        image: "/sunset1.jpeg",
+        title: "Джинсовая куртка оверсайз с эффектом потертости",
         arrow: "/arrow-item.png",
         price: "$350",
     },
     {
-        id: 4,
+        id: 7,
         image: "/image1.jpg",
         title: "Мини-платье на бретелях",
         arrow: "/arrow-item.png",
@@ -80,7 +80,7 @@ const Collection = () => {
                 <div className={styles["collection-items"]}>
                     <Slide
                         slidesToScroll={1}
-                        slidesToShow={3}
+                        slidesToShow={2}
                         indicators={true}
                         responsive={responsiveSettings}
                     >
