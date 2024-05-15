@@ -1,16 +1,20 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import cn from "clsx";
 import Image from "next/image";
 import { MenuList } from "./NavbarList";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Modal from "../Ui/Modal/Modal";
+import Button from "../Ui/Button/Button";
+import { useAppSelector } from "@/lib/hooks";
 
 const Navbar = () => {
     const pathName = usePathname();
+    const products = useAppSelector((s) => s.productSlice.products);
+    const [isOpen, setIsOpen] = useState(false);
 
-    console.log(pathName);
     return (
         <header className="container">
             <div className={styles["header"]}>
@@ -42,6 +46,7 @@ const Navbar = () => {
                             alt="phone"
                             width="27"
                             height="27"
+                            onClick={() => setIsOpen(true)}
                         />
 
                         <Link href={"tel: +7 (495) 823-54-12"}>
@@ -49,7 +54,7 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    <Link href={"/cart"}>
+                    <Link className={styles["header-cart"]} href={"/cart"}>
                         <button className={styles["header-contacts-btn"]}>
                             <Image
                                 src="/basket.png"
@@ -58,9 +63,33 @@ const Navbar = () => {
                                 height={24}
                             />
                         </button>
+
+                        <span>{products.length}</span>
                     </Link>
                 </div>
             </div>
+
+            <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+                <div className={styles["modal-header"]}>
+                    <h2>Заказать обратный звонок</h2>
+                    <form
+                        onSubmit={(e) => e.preventDefault()}
+                        className={styles["modal-form"]}
+                    >
+                        <div>
+                            <input type="text" placeholder="Имя" />
+                        </div>
+                        <div>
+                            <input type="text" placeholder="E-mail" />
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Телефон" />
+                        </div>
+
+                        <Button color="blue">Заказать</Button>
+                    </form>
+                </div>
+            </Modal>
         </header>
     );
 };

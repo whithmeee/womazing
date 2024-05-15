@@ -81,7 +81,6 @@ const Collection = () => {
                     <Slide
                         slidesToScroll={1}
                         slidesToShow={2}
-                        indicators={true}
                         responsive={responsiveSettings}
                     >
                         {ITEM_COLLECTION.map((item) => {

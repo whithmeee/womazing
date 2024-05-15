@@ -21,10 +21,39 @@ export const productSlice = createSlice({
     initialState,
     reducers: {
         setProduct: (state, action) => {
-            state.products.push(action.payload);
+            const { id } = action.payload;
+
+            const existingProduct = state.products.find((p) => p.id === id);
+
+            if (existingProduct) {
+                existingProduct.count++;
+            } else {
+                state.products.push(action.payload);
+            }
+        },
+        removeProduct: (state, action) => {
+            state.products = state.products.filter(
+                (p) => p.id === action.payload
+            );
+        },
+        productDecrement: (state, action) => {
+            const { id } = action.payload;
+            const decrementProduct = state.products.find((p) => p.id === id);
+
+            if (decrementProduct) {
+                decrementProduct.count--;
+            }
+
+            if (decrementProduct?.count === 0) {
+                decrementProduct.count = 1;
+            }
+        },
+        clearProduct: (state) => {
+            state.products = [];
         },
     },
 });
 
-export const { setProduct } = productSlice.actions;
+export const { setProduct, removeProduct, productDecrement } =
+    productSlice.actions;
 export default productSlice.reducer;

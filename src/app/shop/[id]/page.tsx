@@ -15,6 +15,7 @@ import ProductSimilar from "./ProductSimilar";
 import { useAppDispatch } from "@/lib/hooks";
 import { setProduct } from "@/lib/productSlice";
 import Button from "@/components/Ui/Button/Button";
+import Modal from "@/components/Ui/Modal/Modal";
 
 export interface IProductDetail {
     id: number;
@@ -23,13 +24,13 @@ export interface IProductDetail {
     price: number;
     image: string[];
     category: number;
+    count: number;
 }
 
 const ProductPage = ({ params }: { params: { id: number } }) => {
     const pathname = usePathname();
-
     const [sizeActive, setSizeActive] = useState<null | number>(null);
-
+    const [isOpen, setIsOpen] = useState(false);
     const dispatch = useAppDispatch();
 
     const { data, isPending, error } = useQuery({
@@ -45,6 +46,7 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
 
     const handleClickAddProduct = () => {
         dispatch(setProduct(data));
+        setIsOpen(true);
     };
 
     return (
@@ -146,9 +148,15 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
                             </ul>
                         </div>
 
-                        <Button onClick={handleClickAddProduct} color="blue">
-                            Добавить в корзину
-                        </Button>
+                        <div className={styles["product-button"]}>
+                            <span>{data?.count}</span>
+                            <Button
+                                onClick={handleClickAddProduct}
+                                color="blue"
+                            >
+                                Добавить в корзину
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,6 +164,14 @@ const ProductPage = ({ params }: { params: { id: number } }) => {
             <div>
                 <ProductSimilar id={data?.id} />
             </div>
+
+            <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+                <div>
+                    <h2>Товар добавлен в корзину</h2>
+
+                    <p>{data?.title}</p>
+                </div>
+            </Modal>
         </div>
     );
 };

@@ -5,7 +5,7 @@ import Womazing from "@/components/Womazing/Womazing";
 
 export default function Home() {
     return (
-        <>
+        <div>
             <section>
                 <Main />
             </section>
@@ -21,6 +21,6 @@ export default function Home() {
             <section>
                 <Womazing />
             </section>
-        </>
+        </div>
     );
 }
